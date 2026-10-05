@@ -29,4 +29,10 @@ public class Booking {
         return end;
     }
 
+    public boolean overlaps(Booking other) {
+        if (this.room != other.room) {
+            return false;
+        }
+        return this.start.isBefore(other.end) && other.start.isBefore(this.end);
+    }
 }
