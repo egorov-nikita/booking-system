@@ -1,3 +1,7 @@
+/**
+ * A reservation of one room by one user for a time interval [start, end).
+ * Holds references to Room and User objects instead of copies of their data.
+ */
 import java.time.LocalDateTime;
 
 public class Booking {
@@ -28,7 +32,11 @@ public class Booking {
     public LocalDateTime getEnd() {
         return end;
     }
-
+    /**
+     * Returns true if this booking overlaps with another one in the same room.
+     * Back-to-back bookings (one ends exactly when the other starts) are allowed,
+     * so we use strict isBefore instead of "before or equal".
+     */
     public boolean overlaps(Booking other) {
         if (this.room != other.room) {
             return false;

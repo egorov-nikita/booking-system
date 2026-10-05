@@ -1,3 +1,7 @@
+/**
+ * A meeting room that can be booked.
+ * Immutable: name and capacity are set once in the constructor and have no setters.
+ */
 public class Room {
     private int capacity;
     private String name;
