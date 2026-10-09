@@ -15,6 +15,9 @@ public class Room {
     }
 
     public Room(int capacity, String name) {
+        if (capacity <= 0){
+            throw new IllegalArgumentException("Capacity must be positive");
+        }
         this.capacity = capacity;
         this.name = name;
     }
